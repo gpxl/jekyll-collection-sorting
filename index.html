@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1>Posts</h1>
+
+  <ul class="posts">
+    <p>
+      {% assign foo = site.collections.foobar.docs %}
+      {% for bar in foo | sort: "title" %}
+      {{ bar.title }}
+      {% endfor %}
+    </p>
+    <p>
+      {% assign foo = site.collections.foobar.docs %}
+      {% for bar in foo | sort: "date" %}
+      {{ bar.title }}
+      {% endfor %}
+    </p>
+    <p>
+      {% assign foo = site.collections.foobar.docs %}
+      {% for bar in foo | sort: "ctitle" %}
+      {{ bar.title }}
+      {% endfor %}
+    </p>
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
